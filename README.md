@@ -23,3 +23,10 @@ My second solo project. This proposal doesn't currently take into account reach 
 * Some new Node package that I haven't thought of yet
 
 ## Wireframes
+
+incoming
+
+## User Stories
+* As someone who hasn't played Magic: the Gathering, I'd like to look at all of the cards and see which ones I like
+* As someone who has played M:tG, I want to keep up with all of the latest cards
+* As someone who just likes cool art, I want to look at all of the awesome Magic artwork
