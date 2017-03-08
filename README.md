@@ -16,7 +16,7 @@ My second solo project. This proposal doesn't currently take into account reach 
 
 ## Techs used
 * Front End: HTML, CSS, JavaScript
-    *for JavaScript, specifically focusing on AJAX (therefore jQuery by extension)
+    * for JavaScript, specifically focusing on AJAX (therefore jQuery by extension)
 * Back End: Express, Node, PG-Promise, Body-Parser
 * Database: pSQL
 * Some new Node package that I haven't thought of yet
