@@ -1,0 +1,22 @@
+{
+  "name": "project-two",
+  "version": "1.0.0",
+  "description": "My second solo project. This proposal doesn't currently take into account reach goals. These are only MVP features",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon -e js,html,css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.generalassemb.ly:jase-d-ace/turtle-project-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mustache-express": "^1.2.4",
+    "pg-promise": "^5.6.3"
+  }
+}

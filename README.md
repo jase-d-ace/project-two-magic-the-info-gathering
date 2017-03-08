@@ -4,7 +4,7 @@ My second solo project. This proposal doesn't currently take into account reach 
 
 ## Expected Behaviors
 * Full CRUD functionality
-* Operational API calls to my own API and to the M:tG API
+* Operational API calls to my own API and to the Magic: the Gathering API
 * MVC architecture using modularized models, controllers and views
 * ReSTful routing convention
 * Idea is to be a deck building app
@@ -13,7 +13,7 @@ My second solo project. This proposal doesn't currently take into account reach 
 * Time constraints - I don't see this project being particularly DIFFICULT (not to say that it won't be challenging), but my main worry is that this will take a whoooooooooooooooooooooooole lot of time.
 * Dual AJAX calls might be a small issue if I'm not careful with which API I'm hitting with each one.
 * The Magic: the Gathering API is a little wonky, and the data I get back (according to POSTMAN) is formatted a little strangely
-* As of right this second, I'm not sure how a second model will come into play. 
+* Two models that work with two tables that will eventually join will be a bit of a challenge.
 
 ## Techs used
 * Front End: HTML, CSS, JavaScript
