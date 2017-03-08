@@ -7,6 +7,7 @@ My second solo project. This proposal doesn't currently take into account reach 
 * Operational API calls to my own API and to the M:tG API
 * MVC architecture using modularized models, controllers and views
 * ReSTful routing convention
+* Idea is to be a deck building app
 
 ## Perceived Problems
 * Time constraints - I don't see this project being particularly DIFFICULT (not to say that it won't be challenging), but my main worry is that this will take a whoooooooooooooooooooooooole lot of time.
@@ -20,3 +21,5 @@ My second solo project. This proposal doesn't currently take into account reach 
 * Back End: Express, Node, PG-Promise, Body-Parser
 * Database: pSQL
 * Some new Node package that I haven't thought of yet
+
+## Wireframes
