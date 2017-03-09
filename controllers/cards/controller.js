@@ -17,3 +17,4 @@ controller.show = (req, res) => {
         console.log('Card Show Controller Error: ', error);
     });
 };
+module.exports = controller;

@@ -11,11 +11,13 @@ controller.index = (req, res) => {
 };
 controller.show = (req, res) => {
     const id = req.params.id;
-    decks.findOne((id) => {
-        res.render('decks/show', data);
+    decks.showDeck(id) => {
+        res.render('decks/show', {
+            deckList: data
+        });
     }).catch((error) => {
-        console.log('Deck Show Controller Error: ', error);
-    });
+    console.log('Deck Show Controller Error: ', error);
+});
 };
 controller.new = (req, res) => {
     res.render('decks/new');
