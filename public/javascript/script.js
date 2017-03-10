@@ -5,6 +5,7 @@ $(document).ready(function () {
         let name = $('.name-input').val();
         let color = $('.color-input').val();
         let type = $('.type-input').val();
+        let text = $('.text-input').val();
         if (name != '') {
             url += '&name=' + name;
         }
@@ -12,9 +13,12 @@ $(document).ready(function () {
             url += '&color=' + color;
         }
         if (type != '') {
-            url += '&type=' + $('.type-input').val();
+            url += '&type=' + type;
         }
-        if (name === '' && color === '' && type === '') {
+        if (text != '') {
+            url += '&oracle=' + text;
+        }
+        if (name === '' && color === '' && type === '' && text === '') {
             alert('please enter search parameters')
         }
         return url;
@@ -34,7 +38,7 @@ $(document).ready(function () {
                 }
             }
             , error: function (error) {
-                console.log('nope, you messed up. fix it.')
+                alert('invalid search, please rework your query')
             }
         });
     });
@@ -43,19 +47,49 @@ $(document).ready(function () {
     const loop = function (array) {
             //        instead of console logs, though, generate divs and shit. you know what to do.
             array.forEach(function (thing) {
-                    let testName = $('<div>');
-                    testName.text(thing.name);
-                    $('#card-show').append(testName);
-                    let testImg = $('<img>');
+                    let name = $('<div>');
+                    name.text(thing.name);
+                    $('#card-show').append(name);
+                    let img = $('<img>');
                     if (thing.editions[0].image_url === 'https://image.deckbrew.com/mtg/multiverseid/0.jpg') {
                         if (!thing.editions[1]) {
-                            testImg.attr('src', thing.editions[0].image_url);
+                            img.attr('src', thing.editions[0].image_url);
+                        }
+                        else {
+                            img.attr('src', thing.editions[1].image_url)
                         }
                     }
                     else {
-                        testImg.attr('src', thing.editions[0].image_url);
+                        img.attr('src', thing.editions[0].image_url);
                     }
-                    $('#card-show').append(testImg);
+                    $('#card-show').append(img);
+                    let imgSrc = img.attr('src')
+                    let save = $('<button>')
+                    save.text('save this card?').click(function () {
+                        saveCard(thing.name, thing.types[0], thing.cost, imgSrc, thing.power, thing.toughness)
+                    }); //end of save button click listener
+                    $('#card-show').append(save);
                 }) //end of forEach method
         } //end of loop function
+    const saveCard = function (name, type, manaCost, image, power, toughness, deck_id) {
+        $.ajax({
+            type: 'POST'
+            , url: '/api/cards'
+            , data: {
+                name: name
+                , type: type
+                , manaCost: manaCost
+                , image: image
+                , power: power
+                , toughness: toughness
+                , deck_id: 0
+            }
+            , success: function (data) {
+                window.location.replace('/cards/' + data.id)
+            }
+            , error: function (error) {
+                console.log('AJAX POST error: ', error)
+            }
+        })
+    }
 }); //end of document.ready

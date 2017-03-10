@@ -12,4 +12,4 @@ CREATE TABLE cards(id SERIAL PRIMARY KEY NOT NULL
                   , image VARCHAR NOT NULL
                   , power INTEGER NOT NULL
                   , toughness INTEGER NOT NULL
-                  , deck_id INTEGER references decks(id) DEFAULT 0);
+                  , deck_id INTEGER references decks(id));
