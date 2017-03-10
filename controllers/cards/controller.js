@@ -3,8 +3,8 @@ const controller = {};
 controller.index = (req, res) => {
     cards.findAll().then((data) => {
         res.render('cards/index', {
-            cards: data
-        });
+     cards: data
+ });
     }).catch((error) => {
         console.log('Card Index Controller Error: ', error)
     });

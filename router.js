@@ -1,7 +1,7 @@
 const router = require('express').Router();
-//router.get('/cards', require('./controllers/cards'));
-//router.get('/deck', require('./controllers/decks'));
-//router.get('/api', require('./controllers/api'));
+router.use('/cards', require('./controllers/cards'));
+//router.use('/deck', require('./controllers/decks'));
+//router.use('/api', require('./controllers/api'));
 router.get('/', (req, res) => {
     res.render('index');
 });

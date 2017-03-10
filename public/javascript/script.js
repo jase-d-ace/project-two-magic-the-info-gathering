@@ -1,24 +1,37 @@
 $(document).ready(function () {
     const form = $('.find-cards');
-    // this works. API is live.
-    // AJAX calls that return more than one card need to be looped through
-    const urlAddOns = [];
-    const addOn = function (text) {
-        if (text != undefined) {
-            urlAddOns.push(text);
+    const makeUrl = function () {
+        let url = 'https://api.deckbrew.com/mtg/cards?';
+        let name = $('.name-input').val();
+        let color = $('.color-input').val();
+        let type = $('.type-input').val();
+        if (name != '') {
+            url += '&name=' + name;
         }
+        if (color != '') {
+            url += '&color=' + color;
+        }
+        if (type != '') {
+            url += '&type=' + $('.type-input').val();
+        }
+        if (name === '' && color === '' && type === '') {
+            alert('please enter search parameters')
+        }
+        return url;
     }
-    addOn($('.name-input').val());
-    addOn($('.color-input').val());
-    addOn($('.type-input').val());
     form.on('submit', function (e) {
         e.preventDefault();
         $.ajax({
-            url: 'https://api.deckbrew.com/mtg/cards?'
+            url: makeUrl()
             , type: 'GET'
             , success: function (data) {
                 $('#card-show').empty();
                 loop(data);
+                if (data.length === 0) {
+                    let alert = $('<div>');
+                    alert.text('Your parameters do not match any cards');
+                    $('#card-show').append(alert);
+                }
             }
             , error: function (error) {
                 console.log('nope, you messed up. fix it.')
@@ -32,11 +45,12 @@ $(document).ready(function () {
             array.forEach(function (thing) {
                     let testName = $('<div>');
                     testName.text(thing.name);
-                    testName.addClass('testClass')
                     $('#card-show').append(testName);
                     let testImg = $('<img>');
-                    if (thing.editions[0].image_url.indexOf('https://image.deckbrew.com/mtg/multiverseid/0.jpg') != -1) {
-                        testImg.attr('src', thing.editions[1].image_url)
+                    if (thing.editions[0].image_url === 'https://image.deckbrew.com/mtg/multiverseid/0.jpg') {
+                        if (!thing.editions[1]) {
+                            testImg.attr('src', thing.editions[0].image_url);
+                        }
                     }
                     else {
                         testImg.attr('src', thing.editions[0].image_url);
