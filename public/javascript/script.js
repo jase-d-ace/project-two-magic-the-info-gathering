@@ -47,6 +47,7 @@ $(document).ready(function () {
     const loop = function (array) {
             //        instead of console logs, though, generate divs and shit. you know what to do.
             array.forEach(function (thing) {
+                    console.log(thing.cost);
                     let name = $('<div>');
                     name.text(thing.name);
                     $('#card-show').append(name);
@@ -66,23 +67,23 @@ $(document).ready(function () {
                     let imgSrc = img.attr('src')
                     let save = $('<button>')
                     save.text('save this card?').click(function () {
-                        saveCard(thing.name, thing.types[0], thing.cost, imgSrc, thing.power, thing.toughness)
+                        saveCard(thing.name, thing.types[0], thing.cmc, imgSrc, thing.power, thing.toughness)
                     }); //end of save button click listener
                     $('#card-show').append(save);
                 }) //end of forEach method
         } //end of loop function
-    const saveCard = function (name, type, manaCost, image, power, toughness, deck_id) {
+    const saveCard = function (name, type, cost, image, power, toughness, deck_id) {
         $.ajax({
             type: 'POST'
             , url: '/api/cards'
             , data: {
                 name: name
                 , type: type
-                , manaCost: manaCost
+                , cmc: cost
                 , image: image
                 , power: power
                 , toughness: toughness
-                , deck_id: 0
+                , deck_id: 1
             }
             , success: function (data) {
                 window.location.replace('/cards/' + data.id)
