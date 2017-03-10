@@ -6,7 +6,7 @@ CREATE TABLE decks(id SERIAL PRIMARY KEY NOT NULL
                   , description TEXT NOT NULL);
 
 CREATE TABLE cards(id SERIAL PRIMARY KEY NOT NULL
-                  , name VARCHAR NOT NULL
+                  , name VARCHAR NOT NULL UNIQUE
                   , type VARCHAR NOT NULL
                   , manaCost VARCHAR NOT NULL
                   , image VARCHAR NOT NULL
