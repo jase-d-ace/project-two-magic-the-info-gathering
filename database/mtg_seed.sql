@@ -10,8 +10,9 @@ CREATE TABLE cards(id SERIAL PRIMARY KEY NOT NULL
                   , type VARCHAR NOT NULL
                   , cost INTEGER NOT NULL
                   , image VARCHAR NOT NULL
-                  , power INTEGER NOT NULL
-                  , toughness INTEGER NOT NULL
+                  , oracle_text VARCHAR
+                  , power INTEGER
+                  , toughness INTEGER
                   , deck_id INTEGER references decks(id));
                   
 INSERT INTO decks(name, description) VALUES(

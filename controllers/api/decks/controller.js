@@ -1,4 +1,4 @@
-const decks = require('../../models/decks');
+const decks = require('../../../models/decks');
 const controller = {};
 controller.index = (req, res) => {
     decks.findAll().then((data) => {

@@ -1,4 +1,4 @@
-const decks = require('../../../models/decks');
+const decks = require('../../models/decks');
 const controller = {};
 controller.index = (req, res) => {
     decks.findAll().then((data) => {
@@ -11,13 +11,13 @@ controller.index = (req, res) => {
 };
 controller.show = (req, res) => {
     const id = req.params.id;
-    decks.showDeck(id) => {
+    decks.showDeck(id).then((data) => {
         res.render('decks/show', {
             deckList: data
         });
     }).catch((error) => {
-    console.log('Deck Show Controller Error: ', error);
-});
+        console.log('Deck Show Controller Error: ', error);
+    });
 };
 controller.new = (req, res) => {
     res.render('decks/new');
