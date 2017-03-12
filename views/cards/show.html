@@ -8,9 +8,9 @@
     <script type='text/javascript' src='/javascript/script.js'></script>
 </head>
 
-<body> <a href='/cards'>back to cards</a>
+<body class='card-id' data-id='{{id}}'> <a href='/cards'>back to cards</a>
     <div class="card-container">
-        <h5>Name: {{name}}</h5> <img src={{image}} />
+        <h5>Name: {{card_name}}</h5> <img src={{image}} />
         <p>{{oracle_text}}</p> Add to deck
         <input type='text' placeholder={{deck_id}} class='add-input'>
         <button class='add-to-deck-submit'>Add to deck</button>

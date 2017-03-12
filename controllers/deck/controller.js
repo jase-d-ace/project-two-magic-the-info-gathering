@@ -26,7 +26,9 @@ controller.new = (req, res) => {
 controller.update = (req, res) => {
     const id = req.params.id;
     decks.findOne(id).then((data) => {
-        res.render('decks/edit');
+        res.render('decks/edit', {
+            deck: data
+        });
     }).catch((error) => {
         console.log('Deck Edit Controller Error: ', error);
     });

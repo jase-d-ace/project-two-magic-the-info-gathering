@@ -8,7 +8,8 @@ controller.index = (req, res) => {
     });
 };
 controller.show = (req, res) => {
-    decks.showDeck(req.params.id).then((data) => {
+    const id = req.params.id
+    decks.showDeck(id).then((data) => {
         res.json(data)
     }).catch((error) => {
         console.log('API Show Controller Error: ', error);

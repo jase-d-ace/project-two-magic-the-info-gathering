@@ -85,7 +85,7 @@ $(document).ready(function () {
                         , power: power
                         , toughness: toughness
                         , deck_id: 1
-                            //default is to put card in general colleciton;
+                            //default is to put card in general collection;
                     }
                     , success: function (data) {
                         window.location.replace('/cards/' + data.id)
@@ -115,22 +115,23 @@ $(document).ready(function () {
             }
         }); //end of AJAX POST
     }; //end of createDeck function
-    //    $('.add-to-deck-submit').click(function () {
-    //        changeDeck($('.add-input').val())
-    //    })
-    //    const changeDeck = function (deck_id) {
-    //            $.ajax({
-    //                    type: 'PUT'
-    //                    , url: '/api/cards'
-    //                    , data: {
-    //                        deck_id: deck_id
-    //                    }
-    //                    , success: function (data) {
-    //                        window.location.replace('/decks/' + data.id);
-    //                    }
-    //                    , error: function (error) {
-    //                        console.log('AJAX card PUT error: ', error);
-    //                    }
-    //                }) //end of AJAX PUT
-    //        } //end of addToDeck function
+    $('.add-to-deck-submit').click(function () {
+        changeDeck($('.card-id').attr('data-id'), $('.add-input').val())
+    })
+    const changeDeck = function (id, deck_id) {
+        $.ajax({
+            type: 'PUT'
+            , url: '/api/cards/' + $('.card-id').attr('data-id')
+            , data: {
+                id: id
+                , deck_id: deck_id
+            }
+            , success: function (data) {
+                window.location.replace('/decks/' + $('.add-input').val());
+            }
+            , error: function (error) {
+                console.log('AJAX card PUT error: ', error);
+            }
+        }); //end of AJAX PUT
+    }; //end of addToDeck function
 }); //end of document.ready
