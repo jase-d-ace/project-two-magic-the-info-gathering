@@ -11,10 +11,10 @@ CREATE TABLE cards(id SERIAL PRIMARY KEY NOT NULL
                   , cost INTEGER NOT NULL
                   , image VARCHAR NOT NULL
                   , oracle_text VARCHAR
-                  , power INTEGER
-                  , toughness INTEGER
-                  , deck_id INTEGER references decks(id));
+                  , power INTEGER DEFAULT 0
+                  , toughness INTEGER DEFAULT 0
+                  , deck_id INTEGER references decks(id) DEFAULT 1);
                   
 INSERT INTO decks(deck_name, description) VALUES(
-                                    'My Collection',
-                                    'Cards you pick will be saved here.');
+                                    'Your Collection',
+                                    'Cards you pick will be saved here until you assign them.');

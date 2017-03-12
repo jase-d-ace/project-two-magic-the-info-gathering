@@ -117,7 +117,7 @@ $(document).ready(function () {
                 , description: description
             }
             , success: function (data) {
-                window.location.replace('/decks/' + data.id);
+                window.location.replace('/decks/');
             }
             , error: function (error) {
                 console.log('AJAX deck POST error: ', error);
@@ -169,4 +169,28 @@ $(document).ready(function () {
                 } //end of error
         }); //end of AJAX deck PUT
     }; //end of editDeck function
+    $('.delete-button').click(function () {
+        //delete button won't work unless there's something on the page to render the id of the deck
+        //but the deck can't be deleted because its a foreign key for anything else in here
+        //so there's no way to get the id on the page while keeping the deck empty
+        //so we hack.
+        if (confirm('Are you sure you want to delete this deck?')) {
+            const id = window.location.href.split('/')
+                //this parses the URL and grabs the id from there
+                //hacky? yes. inelegant? absolutely. does it work? you bet your bottom dollar it does.
+            deleteDeck(id[4]);
+        }
+    })
+    const deleteDeck = function (id) {
+        $.ajax({
+            type: 'DELETE'
+            , url: '/api/decks/' + id
+            , success: function (data) {
+                window.location.replace('/decks');
+            }
+            , error: function (error) {
+                console.log('AJAX deck DELETE Error: ', error)
+            }
+        }); //end of AJAX deck DELETE
+    }; //end of deleteDeck function
 }); //end of document.ready

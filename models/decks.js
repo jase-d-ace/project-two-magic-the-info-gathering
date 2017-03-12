@@ -4,7 +4,7 @@ decks.findAll = () => {
     return db.any('SELECT * FROM decks');
 };
 decks.showDeck = (id) => {
-    return db.any(`SELECT *, cards.id AS card_id FROM cards 
+    return db.any(`SELECT *, cards.id AS card_id, decks.deck_name AS deck_name FROM cards 
 JOIN decks ON decks.id = cards.deck_id WHERE deck_id = $1`, [id])
 };
 decks.findOne = (id) => {

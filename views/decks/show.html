@@ -10,11 +10,13 @@
 
 <body> <a href="/decks/">Back to all Decks</a>
     <h1>This deck:</h1>
-    <h2>Click the card's image to assign it to a deck</h2> {{#deck}}
-    <h2>{{card_name}}</h2>
+    <h2>Click a card's image to reassign it</h2> {{#deck}}
+    <h2 class='show-id' data-id={{deck_id}}>{{card_name}}</h2>
     <h3>Combined Mana Cost: {{cost}}</h3>
-    <a href='/cards/{{card_id}}'><img src="{{image}}" /></a>
+    <a href='/cards/{{card_id}}'><img src={{image}} /></a>
     <p>{{oracle_text}}</p>
-    <p>Power/Toughness: {{power}}/{{toughness}}</p> {{/deck}} {{#deck.0}} <a href="/decks/{{deck_id}}/edit">Change this deck's name or description</a> {{/deck.0}}<a href="/cards/">Add More Cards</a> </body>
+    <p>Power/Toughness: {{power}}/{{toughness}}</p> {{/deck}} {{#deck.0}} <a href="/decks/{{deck_id}}/edit">Change this deck's name or description</a> {{/deck.0}}<a href="/cards/">Add More Cards</a>
+    <div class="delete-button">Delete this Deck?</div>
+</body>
 
 </html>
