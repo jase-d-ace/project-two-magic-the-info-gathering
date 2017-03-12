@@ -15,14 +15,14 @@ controller.show = (req, res) => {
     });
 };
 controller.create = (req, res) => {
-    cards.create(req.body.name, req.body.type, req.body.cmc, req.body.image, req.body.oracle_text, req.body.power, req.body.toughness, req.body.deck_id).then((data) => {
+    cards.create(req.body.name, req.body.type, req.body.cmc, req.body.image, req.body.text, req.body.power, req.body.toughness, req.body.deck_id).then((data) => {
         res.json(data);
     }).catch((error) => {
         console.log('API Create Controller Error: ', error);
     });
 };
-controller.update(req, res) => {
-    cards.update(req.body.deck_id, req.params.id).then((data) => {
+controller.update = (req, res) => {
+    cards.update(req.params.id, req.body.deck_id).then((data) => {
         res.json(data);
     }).catch((error) => {
         console.log('API Update Controller Error: ', error);

@@ -17,4 +17,14 @@ controller.show = (req, res) => {
         console.log('Card Show Controller Error: ', error);
     });
 };
+controller.update = (req, res) => {
+    const id = req.params.id;
+    cards.findOne(id).then((data) => {
+        res.render('cards/edit', {
+            cards: data
+        });
+    }).catch((error) => {
+        console.log('Card Update Controller Error: ', error);
+    });
+};
 module.exports = controller;

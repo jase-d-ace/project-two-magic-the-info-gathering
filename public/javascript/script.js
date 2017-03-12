@@ -1,7 +1,5 @@
 $(document).ready(function () {
-    //add the ID to the deck render page.
-    //to add a card to different decks, have an input field to put the ID
-    //and pass that as a variable into the AJAX POST.
+    //find a way to access the card's specific id while working with deck data
     const form = $('.find-cards');
     const makeUrl = function () {
         let url = 'https://api.deckbrew.com/mtg/cards?';
@@ -83,12 +81,11 @@ $(document).ready(function () {
                         , type: type
                         , cmc: cost
                         , image: image
-                        , oracle_text: text
+                        , text: text
                         , power: power
                         , toughness: toughness
-                            //deck_id will end up changing at some point.
-                            
                         , deck_id: 1
+                            //default is to put card in general colleciton;
                     }
                     , success: function (data) {
                         window.location.replace('/cards/' + data.id)
@@ -103,19 +100,37 @@ $(document).ready(function () {
         createDeck($('.deck-name-input').val(), $('.deck-description-input').val());
     })
     const createDeck = function (name, description) {
-            $.ajax({
-                    type: 'POST'
-                    , url: '/api/decks'
-                    , data: {
-                        name: name
-                        , description: description
-                    }
-                    , success: function (data) {
-                        window.location.replace('/decks/' + data.id);
-                    }
-                    , error: function (error) {
-                            console.log('AJAX deck POST error: ', error)
-                        } //end of error
-                }) //end of AJAX POST
-        } //end of create Deck function
+        $.ajax({
+            type: 'POST'
+            , url: '/api/decks'
+            , data: {
+                name: name
+                , description: description
+            }
+            , success: function (data) {
+                window.location.replace('/decks/' + data.id);
+            }
+            , error: function (error) {
+                console.log('AJAX deck POST error: ', error);
+            }
+        }); //end of AJAX POST
+    }; //end of createDeck function
+    //    $('.add-to-deck-submit').click(function () {
+    //        changeDeck($('.add-input').val())
+    //    })
+    //    const changeDeck = function (deck_id) {
+    //            $.ajax({
+    //                    type: 'PUT'
+    //                    , url: '/api/cards'
+    //                    , data: {
+    //                        deck_id: deck_id
+    //                    }
+    //                    , success: function (data) {
+    //                        window.location.replace('/decks/' + data.id);
+    //                    }
+    //                    , error: function (error) {
+    //                        console.log('AJAX card PUT error: ', error);
+    //                    }
+    //                }) //end of AJAX PUT
+    //        } //end of addToDeck function
 }); //end of document.ready

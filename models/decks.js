@@ -5,8 +5,7 @@ decks.findAll = () => {
 };
 decks.showDeck = (id) => {
     return db.any(`SELECT * FROM cards 
-JOIN decks ON decks.id = cards.deck_id 
-WHERE deck_id = $1`, [id])
+JOIN decks ON decks.id = cards.deck_id WHERE deck_id = $1`, [id])
 };
 decks.create = (name, description) => {
     return db.one(`INSERT INTO decks(deck_name, description) VALUES($1, $2) returning id`, [name, description])

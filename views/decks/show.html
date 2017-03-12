@@ -9,10 +9,12 @@
 </head>
 
 <body>
-    <h1>This Deck:</h1> {{#deck}}
+    <h1>This Deck:</h1>
+    <h2>Click the card's image to assign it to a deck</h2> {{#deck}}
     <h2>{{card_name}}</h2>
-    <h3>Combined Mana Cost: {{cost}}</h3> <img src="{{image}}" />
+    <h3>Combined Mana Cost: {{cost}}</h3>
+    <a href='/cards/{{id}}'><img src="{{image}}" /></a>
     <p>{{oracle_text}}</p>
-    <p>{{power}}/{{toughness}}</p> {{/deck}} <a href="/cards/">Add More Cards</a></body>
+    <p>Power/Toughness: {{power}}/{{toughness}}</p> {{/deck}} <a href="/cards/">Add More Cards</a></body>
 
 </html>

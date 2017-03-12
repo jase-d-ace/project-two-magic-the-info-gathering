@@ -16,5 +16,5 @@ CREATE TABLE cards(id SERIAL PRIMARY KEY NOT NULL
                   , deck_id INTEGER references decks(id));
                   
 INSERT INTO decks(deck_name, description) VALUES(
-                                    'My First Deck',
-                                    'This is my first deck!');
+                                    'My Collection',
+                                    'Cards you pick will be saved here.');
