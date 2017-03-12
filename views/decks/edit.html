@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
     <script type='text/javascript' src='/javascript/query.js'></script>
     <script type='text/javascript' src='/javascript/script.js'></script>
 </head>
-<body>
-    
+
+<body> <a href='/decks/{{id}}'>Back to this list</a> <a href="/decks/">Back to All Decks</a>
+    <h1 class='deck-id' data-id='{{id}}'>Edit this deck</h1>
+    <form class='edit-deck'>
+        <textarea class='edit-name-input'>{{deck_name}}</textarea>
+        <textarea name="" class="edit-description-input">{{description}}</textarea>
+        <input type='submit'> </form>
 </body>
+
 </html>

@@ -12,7 +12,6 @@ controller.index = (req, res) => {
 controller.show = (req, res) => {
     const id = req.params.id;
     decks.showDeck(id).then((data) => {
-        console.log(data);
         res.render('decks/show', {
             deck: data
         });
@@ -26,9 +25,7 @@ controller.new = (req, res) => {
 controller.update = (req, res) => {
     const id = req.params.id;
     decks.findOne(id).then((data) => {
-        res.render('decks/edit', {
-            deck: data
-        });
+        res.render('decks/edit', data);
     }).catch((error) => {
         console.log('Deck Edit Controller Error: ', error);
     });
