@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    //add the ID to the deck render page.
+    //to add a card to different decks, have an input field to put the ID
+    //and pass that as a variable into the AJAX POST.
     const form = $('.find-cards');
     const makeUrl = function () {
         let url = 'https://api.deckbrew.com/mtg/cards?';
@@ -65,7 +68,7 @@ $(document).ready(function () {
                     $('#card-show').append(img);
                     let imgSrc = img.attr('src')
                     let save = $('<button>')
-                    save.text('save this card?').click(function () {
+                    save.text('Add to Collection?').click(function () {
                         saveCard(thing.name, thing.types[0], thing.cmc, imgSrc, thing.text, thing.power, thing.toughness)
                     }); //end of save button click listener
                     $('#card-show').append(save);
@@ -91,8 +94,28 @@ $(document).ready(function () {
                         window.location.replace('/cards/' + data.id)
                     }
                     , error: function (error) {
-                            console.log('AJAX POST error: ', error)
+                            console.log('AJAX card POST error: ', error)
                         } //end of error
                 }) //end of AJAX POST
         } //ends save card function
+    $('.new-deck').on('submit', function (e) {
+        e.preventDefault();
+        createDeck($('.deck-name-input').val(), $('.deck-description-input').val());
+    })
+    const createDeck = function (name, description) {
+            $.ajax({
+                    type: 'POST'
+                    , url: '/api/decks'
+                    , data: {
+                        name: name
+                        , description: description
+                    }
+                    , success: function (data) {
+                        window.location.replace('/decks/' + data.id);
+                    }
+                    , error: function (error) {
+                            console.log('AJAX deck POST error: ', error)
+                        } //end of error
+                }) //end of AJAX POST
+        } //end of create Deck function
 }); //end of document.ready

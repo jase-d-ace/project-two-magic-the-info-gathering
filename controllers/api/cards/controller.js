@@ -21,6 +21,13 @@ controller.create = (req, res) => {
         console.log('API Create Controller Error: ', error);
     });
 };
+controller.update(req, res) => {
+    cards.update(req.body.deck_id, req.params.id).then((data) => {
+        res.json(data);
+    }).catch((error) => {
+        console.log('API Update Controller Error: ', error);
+    })
+}
 controller.destroy = (req, res) => {
     decks.destroy(req.params.id).then((data) => {
         req.json(data);

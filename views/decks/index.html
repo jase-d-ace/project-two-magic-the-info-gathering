@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <script type='text/javascript' src='/javascript/query.js'></script>
+    <script type='text/javascript' src='/javascript/script.js'></script>
 </head>
 
 <body>
     <h1>My Decks:</h1> {{#decks}}
-    <h2>{{name}}</h2>
-    <p>{{description}}</p> {{/decks}} </body>
+    <p>Deck ID: {{id}}</p> <a href="/decks/{{id}}"><h2>{{deck_name}}</h2></a>
+    <p>{{description}}</p> {{/decks}} <a href="/decks/new">Create New Deck</a> </body>
 
 </html>

@@ -12,8 +12,9 @@ controller.index = (req, res) => {
 controller.show = (req, res) => {
     const id = req.params.id;
     decks.showDeck(id).then((data) => {
+        console.log(data);
         res.render('decks/show', {
-            deckList: data
+            deck: data
         });
     }).catch((error) => {
         console.log('Deck Show Controller Error: ', error);
