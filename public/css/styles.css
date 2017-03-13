@@ -29,6 +29,12 @@ body {
     width: 100vw;
 }
 
+#deck-index-container {
+    background-image: url(https://d.fastcompany.net/multisite_files/fastcompany/imagecache/1280/poster/2016/05/3059639-poster-1280-magic-the-gathering-lessons.jpg);
+    height: 100vh;
+    width: 100vw;
+}
+
 #card-show {
     display: -webkit-flex;
     display: -moz-flex;
@@ -82,10 +88,18 @@ body {
 
 .logo {
     opacity: 0;
-    animation: rise 2s;
-    animation-fill-mode: forwards;
-    animation-delay: 2s;
+    animation: rise 2s 2s forwards;
     margin-top: 5%;
+}
+
+.newCard {
+    align-items: center;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-flow: column wrap;
 }
 
 

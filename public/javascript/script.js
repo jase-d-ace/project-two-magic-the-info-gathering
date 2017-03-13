@@ -52,6 +52,7 @@ $(document).ready(function () {
             let newCard = $('<div>');
             newCard.addClass('new-card');
             let name = $('<div>');
+            name.addClass('card-name');
             name.text(thing.name);
             newCard.append(name)
             let img = $('<img>');

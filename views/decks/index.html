@@ -4,13 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet">
+    <link href='/css/styles.css' rel='stylesheet'>
     <script type='text/javascript' src='/javascript/query.js'></script>
     <script type='text/javascript' src='/javascript/script.js'></script>
 </head>
 
-<body> <a href="/cards/">Card Search</a>
-    <h1>My Decks:</h1> {{#decks}}
-    <p>Deck ID: {{id}}</p> <a href="/decks/{{id}}"><h2>{{deck_name}}</h2></a>
-    <p>{{description}}</p> {{/decks}} <a href="/decks/new">Create New Deck</a> </body>
+<body>
+    <div id="deck-index-container"> <a href="/cards/">Card Search</a>
+        <h1>My Decks:</h1> {{#decks}}
+        <p>Deck ID: {{id}}</p> <a href="/decks/{{id}}"><h2>{{deck_name}}</h2></a>
+        <p>{{description}}</p> {{/decks}} <a href="/decks/new">Create New Deck</a></div>
+</body>
 
 </html>
