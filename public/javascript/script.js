@@ -238,4 +238,9 @@ $(document).ready(function () {
             }
         }); //end of AJAX sample hand GET
     }; //end of sampleHand function
+    $('.generate-hand').click(function () {
+        const id = $('.show-id').attr('data-id');
+        console.log(id);
+        sampleHand(id);
+    });
 }); //end of document.ready don't touch this!

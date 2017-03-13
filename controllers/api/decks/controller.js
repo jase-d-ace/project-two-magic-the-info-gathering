@@ -24,7 +24,7 @@ controller.create = (req, res) => {
     });
 };
 controller.sampleHand = (req, res) => {
-    decks.sampleHand(req.params.deck_id).then((data) => {
+    decks.sampleHand(req.params.id).then((data) => {
         console.log(data);
         res.json(data);
     }).catch((error) => {

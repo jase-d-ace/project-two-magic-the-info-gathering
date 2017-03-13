@@ -151,6 +151,10 @@ body {
     width: 100vw;
 }
 
+.deck-show {
+    color: aliceblue;
+}
+
 .deck-list {
     display: -webkit-flex;
     display: -moz-flex;
