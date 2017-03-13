@@ -22,6 +22,13 @@ controller.create = (req, res) => {
         console.log('API Create Controller Error: ', error);
     });
 };
+controller.sampleHand = (req, res) => {
+    decks.sampleHand(req.params.id).then((data) => {
+        res.json(data);
+    }).catch((error) => {
+        console.log('API Sample Hand Controller Error: ', error)
+    })
+}
 controller.update = (req, res) => {
     decks.update(req.params.id, req.body.name, req.body.description).then((data) => {
         res.json(data);

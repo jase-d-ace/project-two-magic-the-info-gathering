@@ -187,8 +187,13 @@ $(document).ready(function () {
             const id = window.location.href.split('/')
                 //this parses the URL and grabs the id from there
                 //hacky? yes. inelegant? absolutely. does it work? you bet your bottom dollar it does.
-            deleteDeck(id[4]);
-        };
+            if (id[4] != 1) {
+                deleteDeck(id[4]);
+            }
+            else {
+                alert('Unable to delete. This will delete your collection.');
+            }; //don't delete your collection. Otherwise literally the entire app breaks.
+        }; //end of confirm check
     }); // end of delete button listener
     const deleteDeck = function (id) {
         $.ajax({
