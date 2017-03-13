@@ -11,10 +11,20 @@
 </head>
 
 <body>
-    <div id="deck-index-container"> <a href="/cards/">Card Search</a>
-        <h1>My Decks:</h1> {{#decks}}
-        <p>Deck ID: {{id}}</p> <a href="/decks/{{id}}"><h2>{{deck_name}}</h2></a>
-        <p>{{description}}</p> {{/decks}} <a href="/decks/new">Create New Deck</a></div>
+    <div id="deck-index-container">
+        <div class="deck-index">
+            <div class="buttons"><a href="/cards/">Card Search</a> <a href="/decks/new">Create New Deck</a></div>
+            <h1>My Decks:</h1>
+            <div class="decks"> {{#decks}}
+                <div class="deck">
+                    <p>Deck ID: {{id}}</p> <a href="/decks/{{id}}"><h2>{{deck_name}}</h2></a>
+                    <p>{{description}}</p>
+                </div> {{/decks}} </div>
+        </div>
+        <div class="flavor-text">
+            <section>Your Decks will appear here when you create them. All of your cards will be in Your Collection before you re-assign them to a deck you choose.</section>
+        </div>
+    </div>
 </body>
 
 </html>
