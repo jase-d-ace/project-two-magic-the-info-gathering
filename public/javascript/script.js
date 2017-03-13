@@ -80,6 +80,7 @@ $(document).ready(function () {
         }); //end of forEach method
     }; //end of loop function
     const saveCard = function (name, type, cost, image, text, power, toughness, deck_id) {
+        //default is to put card in general collection;
         $.ajax({
             type: 'POST'
             , url: '/api/cards'
@@ -92,7 +93,6 @@ $(document).ready(function () {
                 , power: power
                 , toughness: toughness
                 , deck_id: 1
-                    //default is to put card in general collection;
             }
             , success: function (data) {
                 window.location.replace('/cards/' + data.id)
@@ -107,7 +107,7 @@ $(document).ready(function () {
         let newName = $('.deck-name-input').val()
         let newDesc = $('.deck-description-input').val()
         createDeck(newName, newDesc);
-    })
+    }); // end of createDeck submit listener
     const createDeck = function (name, description) {
         $.ajax({
             type: 'POST'
@@ -128,7 +128,7 @@ $(document).ready(function () {
         let id = $('.card-id').attr('data-id')
         let deck_id = $('.add-input').val()
         changeDeck(id, deck_id)
-    });
+    }); // end of assignment click listener
     const changeDeck = function (id, deck_id) {
         $.ajax({
             type: 'PUT'
@@ -151,7 +151,7 @@ $(document).ready(function () {
         const name = $('.edit-name-input').val();
         const description = $('.edit-description-input').val();
         editDeck(id, name, description)
-    })
+    }); //end of edit submit form listener
     const editDeck = function (id, name, description) {
         $.ajax({
             type: 'PUT'
@@ -179,8 +179,8 @@ $(document).ready(function () {
                 //this parses the URL and grabs the id from there
                 //hacky? yes. inelegant? absolutely. does it work? you bet your bottom dollar it does.
             deleteDeck(id[4]);
-        }
-    })
+        };
+    }); // end of delete button listener
     const deleteDeck = function (id) {
         $.ajax({
             type: 'DELETE'
@@ -193,4 +193,22 @@ $(document).ready(function () {
             }
         }); //end of AJAX deck DELETE
     }; //end of deleteDeck function
-}); //end of document.ready
+    $('.delete-card').click(function () {
+        if (confirm('Are you sure you want to delete this card?')) {
+            const id = $('.card-id').attr('data-id');
+            deleteCard(id)
+        };
+    }); //end of delete card click listener
+    const deleteCard = function (id) {
+        $.ajax({
+            type: 'DELETE'
+            , url: '/api/cards/' + id
+            , success: function (data) {
+                window.location.replace('/decks');
+            }
+            , error: function (error) {
+                console.log('AJAX card DELETE Error: ', error)
+            }
+        }); //end of AJAX card DELETE
+    }; //end of deleteCard function
+}); //end of document.ready don't touch this!

@@ -29,7 +29,7 @@ controller.update = (req, res) => {
     })
 }
 controller.destroy = (req, res) => {
-    decks.destroy(req.params.id).then((data) => {
+    cards.destroy(req.params.id).then((data) => {
         res.json(data);
     }).catch((error) => {
         console.log('API Delete Controller Error: ', error)
