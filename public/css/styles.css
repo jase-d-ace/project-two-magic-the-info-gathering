@@ -1,0 +1,109 @@
+* {
+    font-family: 'Goudy Bookletter 1911', serif;
+}
+
+body {
+    margin: 0 auto;
+}
+
+#front-page-container {
+    background-image: url(http://magic.wizards.com/sites/mtg/files/images/featured/OGW_header_preloader.jpg);
+    background-size: cover;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.front-page {
+    align-items: center;
+    animation: fadeIn 2s;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: aliceblue;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: 7%;
+    padding: 10px;
+    width: 25%;
+}
+
+.page-link {
+    color: aliceblue;
+}
+
+.page-link:visited {
+    color: azure;
+}
+
+.buttons {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}

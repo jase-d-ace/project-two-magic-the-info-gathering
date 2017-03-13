@@ -8,6 +8,9 @@ app.engine('html', mustacheExpress());
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
+//hook up morgan
+const morgan = require('morgan');
+app.use(morgan('dev'));
 //hook up body-parser
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({

@@ -1,5 +1,9 @@
 $(document).ready(function () {
+    //before we start, shoutout to deckbrew.com for the solid API
+    //weirdly enough, Wizards of the Coast is rather stingy with their information
+    //this API, while not perfect, got the job done!
     const form = $('.find-cards');
+    //grab values from search bars to generate a URL
     const makeUrl = function () {
         let url = 'https://api.deckbrew.com/mtg/cards?';
         let name = $('.name-input').val();
@@ -132,13 +136,13 @@ $(document).ready(function () {
     const changeDeck = function (id, deck_id) {
         $.ajax({
             type: 'PUT'
-            , url: '/api/cards/' + $('.card-id').attr('data-id')
+            , url: '/api/cards/' + id
             , data: {
                 id: id
                 , deck_id: deck_id
             }
             , success: function (data) {
-                window.location.replace('/decks/' + $('.add-input').val());
+                window.location.replace('/decks/' + deck_id);
             }
             , error: function (error) {
                 console.log('AJAX card PUT error: ', error);
