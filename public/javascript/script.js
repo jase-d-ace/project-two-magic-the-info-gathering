@@ -225,4 +225,17 @@ $(document).ready(function () {
             }
         }); //end of AJAX card DELETE
     }; //end of deleteCard function
+    const sampleHand = function (id) {
+        $.ajax({
+            type: 'GET'
+            , url: '/api/decks/' + id
+            , success: function (data) {
+                console.log(data);
+                //write append function here
+            }
+            , error: function (error) {
+                console.log('AJAX Sample Hand Error: ', error);
+            }
+        }); //end of AJAX sample hand GET
+    }; //end of sampleHand function
 }); //end of document.ready don't touch this!

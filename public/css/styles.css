@@ -142,10 +142,46 @@ body {
 }
 
 
+/*Deck Show Page*/
+
+#deck-show-container {
+    background-image: url(http://magic.wizards.com/sites/mtg/files/images/featured/EN_Jace_7_Gallery.jpg);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+.deck-list {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-flow: row nowrap;
+    overflow-x: auto;
+    width: 100%;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.delete-button {
+    color: aliceblue;
+}
+
+
 /*Miscellaneous Stuff*/
 
 a {
     color: aliceblue;
+    text-decoration: none;
 }
 
 a:visited {

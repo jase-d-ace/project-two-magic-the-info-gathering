@@ -1,5 +1,6 @@
 const decks = require('../../../models/decks');
 const controller = {};
+const randomize = require('random-int')
 controller.index = (req, res) => {
     decks.findAll().then((data) => {
         res.json(data);
@@ -23,7 +24,8 @@ controller.create = (req, res) => {
     });
 };
 controller.sampleHand = (req, res) => {
-    decks.sampleHand(req.params.id).then((data) => {
+    decks.sampleHand(req.params.deck_id).then((data) => {
+        console.log(data);
         res.json(data);
     }).catch((error) => {
         console.log('API Sample Hand Controller Error: ', error)
