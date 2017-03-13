@@ -17,6 +17,10 @@
     <p>{{oracle_text}}</p>
     <p>Power/Toughness: {{power}}/{{toughness}}</p> {{/deck}} {{#deck.0}} <a href="/decks/{{deck_id}}/edit">Change this deck's name or description</a> {{/deck.0}}<a href="/cards/">Add More Cards</a>
     <div class="delete-button">Delete this Deck?</div>
+    <!-- took the deck.0 trick from the harry potter CRUD solution. 
+    I see why it works though, it lets you loop through again using only the 'first element' in the data array
+    Which is useful when you're trying to loop again separately.
+    So thanks, Matt! -->
 </body>
 
 </html>
