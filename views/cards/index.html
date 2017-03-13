@@ -4,23 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet">
+    <link href='/css/styles.css' rel='stylesheet'>
     <script type='text/javascript' src='/javascript/query.js'></script>
     <script type='text/javascript' src='/javascript/script.js'></script>
 </head>
 
-<body> <a href="/decks/">My decks</a>
-    <h1>Find Cards Here!</h1>
-    <form class='find-cards'>
-        <label>Name: </label>
-        <input class='name-input' type='text' placeholder='Card Name'>
-        <label>Color: </label>
-        <input class='color-input' type='text' placeholder='Color'>
-        <label>Card Type:</label>
-        <input class='type-input' type='text' placeholder='Type'>
-        <label>Card Text:</label>
-        <input class='text-input' type='text' placeholder='Card Text'>
-        <input type="submit" value='submit'> </form>
-    <div id="card-show"></div>
+<body>
+    <div id="card-index-container"> <a class='page-link' href="/decks/">My decks</a>
+        <h1>Find Cards Here!</h1>
+        <form class='find-cards'>
+            <label>Name: </label>
+            <input class='name-input' type='text' placeholder='Card Name'>
+            <label>Color: </label>
+            <input class='color-input' type='text' placeholder='Color'>
+            <label>Card Type:</label>
+            <input class='type-input' type='text' placeholder='Type'>
+            <label>Card Text:</label>
+            <input class='text-input' type='text' placeholder='Card Text'>
+            <input type="submit" value='submit'> </form>
+        <div id="card-show"></div>
+    </div>
 </body>
 
 </html>

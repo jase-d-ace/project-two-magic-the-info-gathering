@@ -49,9 +49,11 @@ $(document).ready(function () {
     //use this to append everything
     const loop = function (array) {
         array.forEach(function (thing) {
+            let newCard = $('<div>');
+            newCard.addClass('new-card');
             let name = $('<div>');
             name.text(thing.name);
-            $('#card-show').append(name);
+            newCard.append(name)
             let img = $('<img>');
             //API limitation:
             //image url is nested within an array...
@@ -73,14 +75,16 @@ $(document).ready(function () {
             else {
                 img.attr('src', thing.editions[0].image_url);
             }
-            $('#card-show').append(img);
+            newCard.append(img);
             //save that image to pass to the backend
             let imgSrc = img.attr('src');
             let save = $('<button>');
             save.text('Add to Collection?').click(function () {
                 saveCard(thing.name, thing.types[0], thing.cmc, imgSrc, thing.text, thing.power, thing.toughness)
             }); //end of save button click listener
-            $('#card-show').append(save);
+            newCard.append(save);
+            //fancy little trick i picked up from stackoverflow
+            newCard.hide().appendTo('#card-show').fadeIn(1000);
         }); //end of forEach method
     }; //end of loop function
     const saveCard = function (name, type, cost, image, text, power, toughness, deck_id) {
