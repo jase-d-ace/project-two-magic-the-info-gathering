@@ -180,6 +180,66 @@ body {
     color: aliceblue;
 }
 
+.sample-hand {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-flow: row nowrap;
+    overflow-x: auto;
+}
+
+
+/*Deck Create Page*/
+
+#new-deck-container {
+    background-image: url(http://media.wizards.com/2015/images/daily/cardart_BFZ_Inspired-Charge.jpg);
+    background-size: cover;
+    color: aliceblue;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+.make-new-deck {
+    align-items: center;
+    align-self: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    margin-top: 5%;
+    width: 35%;
+}
+
+.new-deck {
+    align-items: center;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-flow: column wrap;
+    padding: 10px;
+}
+
 
 /*Miscellaneous Stuff*/
 

@@ -230,8 +230,8 @@ $(document).ready(function () {
             type: 'GET'
             , url: '/api/decks/' + id
             , success: function (data) {
-                console.log(data);
-                //write append function here
+                $('.sample-hand').empty();
+                drawCards(data);
             }
             , error: function (error) {
                 console.log('AJAX Sample Hand Error: ', error);
@@ -240,7 +240,18 @@ $(document).ready(function () {
     }; //end of sampleHand function
     $('.generate-hand').click(function () {
         const id = $('.show-id').attr('data-id');
-        console.log(id);
         sampleHand(id);
-    });
+    }); //end of generate hand listener
+    const drawCards = function (array) {
+        array.forEach(function (card) {
+            let hand = $('<div>');
+            let thisCard = $('<div>');
+            thisCard.text(card.card_name);
+            let thisImg = $('<img>');
+            thisImg.attr('src', card.image);
+            thisCard.appendTo(hand);
+            thisImg.appendTo(hand);
+            hand.hide().appendTo('.sample-hand').fadeIn(3000);
+        }); //end of forEach method
+    }; // end drawCards function
 }); //end of document.ready don't touch this!
