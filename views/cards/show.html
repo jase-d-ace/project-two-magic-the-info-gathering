@@ -4,17 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet">
+    <link href='/css/styles.css' rel='stylesheet'>
     <script type='text/javascript' src='/javascript/query.js'></script>
     <script type='text/javascript' src='/javascript/script.js'></script>
 </head>
 
-<body class='card-id' data-id={{id}}> <a href='/cards'>back to cards</a>
-    <div class="card-container">
-        <h5>Name: {{card_name}}</h5> <img src={{image}} />
-        <p>{{oracle_text}}</p> Add to deck
-        <input type='text' placeholder={{deck_id}} class='add-input'>
-        <button class='add-to-deck-submit'>Add to deck</button>
-        <button class="delete-card">Remove this card?</button>
+<body class='card-id' data-id={{id}}>
+    <div id="card-show-container">
+        <div class="buttons"> <a href='/cards'>Back to Card Search</a> <a href="/decks/">Jump to Decks</a>
+            <div class="delete-button">Remove this Card?</div>
+        </div>
+        <div class="card-container">
+            <h3>{{card_name}}</h3> <img src={{image}} />
+            <p>{{oracle_text}}</p> Add to deck
+            <input type='text' placeholder={{deck_id}} class='add-input'>
+            <button class='add-to-deck-submit'>Add to deck</button>
+        </div>
     </div>
 </body>
 

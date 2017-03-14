@@ -4,16 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet">
+    <link href='/css/styles.css' rel='stylesheet'>
     <script type='text/javascript' src='/javascript/query.js'></script>
     <script type='text/javascript' src='/javascript/script.js'></script>
 </head>
 
-<body> <a href='/decks/{{id}}'>Back to this list</a> <a href="/decks/">Back to All Decks</a>
-    <h1 class='deck-id' data-id='{{id}}'>Edit this deck</h1>
-    <form class='edit-deck'>
-        <textarea class='edit-name-input'>{{deck_name}}</textarea>
-        <textarea name="" class="edit-description-input">{{description}}</textarea>
-        <input type='submit'> </form>
+<body>
+    <div id="deck-edit-container">
+        <div class="buttons"> <a href='/decks/{{id}}'>Back to this list</a> <a href="/decks/">Back to All Decks</a><a href="/cards">Back to Card Search</a></div>
+        <div class="edit">
+            <h1 class='deck-id' data-id='{{id}}'>Edit this deck</h1>
+            <form class='edit-deck'>
+                <textarea class='edit-name-input'>{{deck_name}}</textarea>
+                <textarea name="" class="edit-description-input">{{description}}</textarea>
+                <input type='submit'> </form>
+        </div>
+    </div>
 </body>
 
 </html>

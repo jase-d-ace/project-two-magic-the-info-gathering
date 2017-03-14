@@ -20,11 +20,16 @@ My second solo project. This proposal doesn't currently take into account reach 
     * for JavaScript, specifically focusing on AJAX (therefore jQuery by extension)
 * Back End: Express, Node, PG-Promise, Body-Parser
 * Database: pSQL
-* Some new Node package that I haven't thought of yet
+* Morgan.js as a logging tool to keep track of AJAX calls
 
 ## Wireframes
 
-incoming
+[Landing Page](https://wireframe.cc/N43aGu)
+[Card Search Page](https://wireframe.cc/S8nGSV)
+[Card Show Page](https://wireframe.cc/hihj9U)
+[Deck Index Page](https://wireframe.cc/pnbgKm)
+[Deck Show Page](https://wireframe.cc/pnbgKm)
+
 
 ## User Stories
 * As someone who hasn't played Magic: the Gathering, I'd like to look at all of the cards and see which ones I like

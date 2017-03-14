@@ -82,6 +82,45 @@ body {
 }
 
 
+/*Card Show Page*/
+
+#card-show-container {
+    align-items: center;
+    background-image: url(http://magic.wizards.com/sites/mtg/files/images/featured/EN_Liliana_3_Gallery.jpg);
+    background-size: cover;
+    color: aliceblue;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    height: 100vh;
+    margin-bottom: 5%;
+    width: 100vw;
+}
+
+.card-container {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    width: 25%;
+}
+
+
 /*Deck Index Page*/
 
 #deck-index-container {
@@ -230,6 +269,56 @@ body {
 }
 
 .new-deck {
+    align-items: center;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-flow: column wrap;
+    padding: 10px;
+}
+
+
+/*Deck Edit Page*/
+
+#deck-edit-container {
+    background-image: url(http://magic.wizards.com/sites/mtg/files/EN_Ajani_PWPortrait.jpg);
+    background-size: cover;
+    color: aliceblue;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+.edit {
+    align-items: center;
+    align-self: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    margin-top: 15%;
+    width: 25%;
+}
+
+.edit-deck {
     align-items: center;
     display: -webkit-flex;
     display: -moz-flex;
