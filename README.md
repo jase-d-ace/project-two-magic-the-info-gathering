@@ -24,11 +24,11 @@ My second solo project. This proposal doesn't currently take into account reach 
 
 ## Wireframes
 
-[Landing Page](https://wireframe.cc/N43aGu)
-[Card Search Page](https://wireframe.cc/S8nGSV)
-[Card Show Page](https://wireframe.cc/hihj9U)
-[Deck Index Page](https://wireframe.cc/pnbgKm)
-[Deck Show Page](https://wireframe.cc/pnbgKm)
+* [Landing Page](https://wireframe.cc/N43aGu)
+* [Card Search Page](https://wireframe.cc/S8nGSV)
+* [Card Show Page](https://wireframe.cc/hihj9U)
+* [Deck Index Page](https://wireframe.cc/pnbgKm)
+* [Deck Show Page](https://wireframe.cc/pnbgKm)
 
 
 ## User Stories
