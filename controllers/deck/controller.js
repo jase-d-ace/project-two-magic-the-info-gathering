@@ -1,7 +1,8 @@
 const decks = require('../../models/decks');
 const controller = {};
 controller.index = (req, res) => {
-    decks.findAll().then((data) => {
+    console.log(req.user);
+    decks.findAll(req.user.id).then((data) => {
         res.render('decks/index', {
             decks: data
         });

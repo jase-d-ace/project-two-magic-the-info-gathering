@@ -7,7 +7,7 @@ const express = require('express')
     , flash = require('connect-flash')
     , cookieParser = require('cookie-parser')
     , bodyParser = require('body-parser')
-    , const PORT = process.env.PORT || 8080;
+    , PORT = process.env.PORT || 8080;
 const app = express();
 app.engine('html', mustacheExpress());
 app.set('view engine', 'html');
@@ -71,7 +71,7 @@ passport.use('local-login', new localStrat({
 }, (req, username, password, done) => {
     person.findByUsername(username).then((user) => {
         if (user) {
-            const isAuthed = bcrypt.compareSync(password, password_digest);
+            const isAuthed = bcrypt.compareSync(password, user.password_digest);
             if (isAuthed) {
                 return done(null, user);
             }
