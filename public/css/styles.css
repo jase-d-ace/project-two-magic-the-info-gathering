@@ -7,8 +7,33 @@
     font-family: 'Goudy Bookletter 1911', serif;
 }
 
+a {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+a:visited {
+    color: azure;
+}
+
 body {
     margin: 0 auto;
+}
+
+.buttons {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
 }
 
 
@@ -327,34 +352,6 @@ body {
     display: flex;
     flex-flow: column wrap;
     padding: 10px;
-}
-
-
-/*Miscellaneous Stuff*/
-
-a {
-    color: aliceblue;
-    text-decoration: none;
-}
-
-a:visited {
-    color: azure;
-}
-
-.buttons {
-    background-color: rgba(0, 0, 0, 0.5);
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -moz-flex-direction: row;
-    -ms-flex-direction: row;
-    -o-flex-direction: row;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
 }
 
 

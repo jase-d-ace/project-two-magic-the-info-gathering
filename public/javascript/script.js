@@ -4,6 +4,7 @@ $(document).ready(function () {
     //this API, while not perfect, got the job done!
     const form = $('.find-cards');
     //grab values from search bars to generate a URL
+    //still looking for a way to refactor this nightmare
     const makeUrl = function () {
         let url = 'https://api.deckbrew.com/mtg/cards?';
         let name = $('.name-input').val();
@@ -80,10 +81,15 @@ $(document).ready(function () {
             //save that image to pass to the backend
             let imgSrc = img.attr('src');
             let save = $('<button>');
+            let cardNumber = $('<input>');
+            newCard.append(cardNumber);
             save.text('Add to Collection?').click(function () {
-                saveCard(thing.name, thing.types[0], thing.cmc, imgSrc, thing.text, thing.power, thing.toughness)
+                for (i = 0; i < cardNumber.val(); i++) {
+                    saveCard(thing.name, thing.types[0], thing.cmc, imgSrc, thing.text, thing.power, thing.toughness)
+                }
             }); //end of save button click listener
             newCard.append(save);
+            cardNumber.attr('placeholder', 'How Many ?');
             //fancy little trick i picked up from stackoverflow
             newCard.hide().appendTo('#card-show').fadeIn(1000);
         }); //end of forEach method
