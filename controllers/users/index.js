@@ -4,7 +4,7 @@ const passport = require('passport');
 const AuthService = require('../../services/auth');
 router.post('/', passport.authenticate('local-signup', {
     failureRedirect: '/users/new'
-    , successRedirect: '/decks'
+    , successRedirect: '/decks/new'
 }));
 router.get('/new', (req, res) => {
     res.render('users/new');

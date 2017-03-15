@@ -18,7 +18,7 @@ const morgan = require('morgan');
 app.use(morgan('dev'));
 //set equip passport before router
 app.use(session({
-    secret: 'monitor lizard'
+    secret: 'keyboard cat'
     , resave: true
     , saveUninitialized: true
 }));
@@ -37,10 +37,6 @@ const person = require('./models/user');
 const localStrat = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
 passport.serializeUser((user, done) => {
-    console.log('----------------------------------------');
-    console.log('in passport.serializeUser callback');
-    console.log('user: ');
-    console.log(user);
     done(null, user);
 });
 passport.deserializeUser((userObj, done) => {
@@ -48,7 +44,7 @@ passport.deserializeUser((userObj, done) => {
         done(null, user)
     }).catch((error) => {
         console.log('Passport Deserialize Error: ', error);
-        done(null, false);
+        return done(null, false);
     });
 });
 //passport strategies

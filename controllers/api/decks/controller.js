@@ -2,7 +2,7 @@ const decks = require('../../../models/decks');
 const controller = {};
 const randomize = require('random-int')
 controller.index = (req, res) => {
-    decks.findAll().then((data) => {
+    decks.findAll(req.user.id).then((data) => {
         res.json(data);
     }).catch((error) => {
         console.log('API Index Controller Error: ', error);
@@ -17,7 +17,7 @@ controller.show = (req, res) => {
     });
 };
 controller.create = (req, res) => {
-    decks.create(req.body.name, req.body.description).then((data) => {
+    decks.create(req.body.name, req.body.description, req.user.id).then((data) => {
         res.json(data);
     }).catch((error) => {
         console.log('API Create Controller Error: ', error);
