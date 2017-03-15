@@ -3,7 +3,7 @@
 My second solo project. Edited to show persisting problems.
 
 ## Heroku App
-[Heroku](lit-springs-78817.heroku.com)
+[Heroku](lit-springs-78817.herokuapp.com)
 
 ## Expected Behaviors
 * Full CRUD functionality
