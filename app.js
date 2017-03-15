@@ -16,7 +16,7 @@ app.use(express.static(__dirname + '/public'));
 //hook up morgan
 const morgan = require('morgan');
 app.use(morgan('dev'));
-//set equip passport before router
+//Equip passport before router
 app.use(session({
     secret: 'keyboard cat'
     , resave: true
@@ -48,7 +48,9 @@ passport.deserializeUser((userObj, done) => {
     });
 });
 //passport strategies
+//new user strategy
 passport.use('local-signup', new localStrat({
+    //check views/users/new.html - these are the names of the input fields
     usernameField: 'user[username]'
     , passwordField: 'user[password]'
     , passReqToCallback: true
@@ -60,6 +62,7 @@ passport.use('local-signup', new localStrat({
         return done(null, false);
     });
 }));
+//returning user strategy
 passport.use('local-login', new localStrat({
     usernameField: 'user[username]'
     , passwordField: 'user[password]'

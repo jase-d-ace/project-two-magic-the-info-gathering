@@ -87,6 +87,8 @@ $(document).ready(function () {
             newCard.append(cardNumber);
             save.text('Add to Collection?').click(function () {
                 for (i = 0; i < cardNumber.val(); i++) {
+                    //got tired of clicking through every time i wanted multiples of a card
+                    //this loops through however many times i want, and i get a bunch of the same card
                     saveCard(thing.name, thing.types[0], thing.cmc, imgSrc, thing.text, thing.power, thing.toughness, deckId.val())
                 }
             }); //end of save button click listener
@@ -98,7 +100,7 @@ $(document).ready(function () {
         }); //end of forEach method
     }; //end of loop function
     const saveCard = function (name, type, cost, image, text, power, toughness, deck_id) {
-        //default is to put card in general collection;
+        //found a way to add cards directly to a deck
         $.ajax({
             type: 'POST'
             , url: '/api/cards'

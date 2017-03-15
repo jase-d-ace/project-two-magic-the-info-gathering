@@ -3,7 +3,7 @@ const router = require('express').Router();
 const passport = require('passport');
 const AuthService = require('../../services/auth');
 router.post('/', passport.authenticate('local-signup', {
-    failureRedirect: '/users/new'
+    failureRedirect: '/'
     , successRedirect: '/decks/new'
 }));
 router.get('/new', (req, res) => {
