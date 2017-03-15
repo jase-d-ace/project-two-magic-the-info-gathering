@@ -82,13 +82,16 @@ $(document).ready(function () {
             let imgSrc = img.attr('src');
             let save = $('<button>');
             let cardNumber = $('<input>');
+            let deckId = $('<input>');
+            newCard.append(deckId)
             newCard.append(cardNumber);
             save.text('Add to Collection?').click(function () {
                 for (i = 0; i < cardNumber.val(); i++) {
-                    saveCard(thing.name, thing.types[0], thing.cmc, imgSrc, thing.text, thing.power, thing.toughness)
+                    saveCard(thing.name, thing.types[0], thing.cmc, imgSrc, thing.text, thing.power, thing.toughness, deckId.val())
                 }
             }); //end of save button click listener
             newCard.append(save);
+            deckId.attr('placeholder', 'Which Deck?')
             cardNumber.attr('placeholder', 'How Many ?');
             //fancy little trick i picked up from stackoverflow
             newCard.hide().appendTo('#card-show').fadeIn(1000);
@@ -107,7 +110,7 @@ $(document).ready(function () {
                 , text: text
                 , power: power
                 , toughness: toughness
-                , deck_id: 1
+                , deck_id: deck_id
             }
             , success: function (data) {
                 window.location.replace('/cards/' + data.id)
@@ -132,6 +135,8 @@ $(document).ready(function () {
                 , description: description
             }
             , success: function (data) {
+                console.log('AJAX is good')
+                console.log(data);
                 window.location.replace('/decks/');
             }
             , error: function (error) {
@@ -193,12 +198,7 @@ $(document).ready(function () {
             const id = window.location.href.split('/')
                 //this parses the URL and grabs the id from there
                 //hacky? yes. inelegant? absolutely. does it work? you bet your bottom dollar it does.
-            if (id[4] != 1) {
-                deleteDeck(id[4]);
-            }
-            else {
-                alert('Unable to delete. This will delete your collection.');
-            }; //don't delete your collection. Otherwise literally the entire app breaks.
+            deleteDeck(id[4]);
         }; //end of confirm check
     }); // end of delete button listener
     const deleteDeck = function (id) {
