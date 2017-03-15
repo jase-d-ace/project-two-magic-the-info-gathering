@@ -357,6 +357,68 @@ body {
 }
 
 
+/*New User Page*/
+
+#new-user-container {
+    -ms-align-items: center;
+    align-items: center;
+    background-image: url(http://magic.wizards.com/sites/mtg/files/images/featured/asdweq.jpg);
+    background-size: cover;
+    color: aliceblue;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+.new-user-form {
+    -ms-align-items: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    height: 30%;
+    width: 30%;
+}
+
+.form {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+}
+
+#new-user-container > h1 {
+    padding-top: 20px;
+}
+
+
 /*Animations start here*/
 
 

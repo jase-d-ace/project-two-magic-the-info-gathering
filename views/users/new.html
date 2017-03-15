@@ -5,12 +5,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/styles.css"> </head>
+    <link href="https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet">
+    <link href='/css/styles.css' rel='stylesheet'> </head>
 
 <body>
-    <main>
-        <section>
-            <form action="/users" method="POST">
+    <div id='new-user-container'>
+        <div class="buttons"><a href="/">Home</a></div>
+        <h1>Welcome, Planeswalker. Who are you?</h1>
+        <div class='new-user-form'>
+            <form class='form' action="/users" method="POST">
                 <label for="username">Username</label>
                 <br>
                 <input id="username" type="text" name="user[username]" placeholder="Your username here">
@@ -20,8 +23,8 @@
                 <input id="password" type="password" name="user[password]" placeholder="New Password">
                 <br>
                 <input type="submit" value="Sign Up"> </form>
-        </section>
-    </main>
+        </div>
+    </div>
 </body>
 
 </html>
