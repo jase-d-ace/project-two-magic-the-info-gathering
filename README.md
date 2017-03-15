@@ -1,6 +1,9 @@
 # Turtle Project Two: Magic: the Info Gathering
 ## by Jason Andrada
-My second solo project. This proposal doesn't currently take into account reach goals. These are only MVP features
+My second solo project. Edited to show persisting problems.
+
+## Heroku App
+[Heroku](lit-springs-78817.heroku.com)
 
 ## Expected Behaviors
 * Full CRUD functionality
@@ -9,11 +12,10 @@ My second solo project. This proposal doesn't currently take into account reach 
 * ReSTful routing convention
 * Idea is to be a deck building app
 
-## Perceived Problems
-* Time constraints - I don't see this project being particularly DIFFICULT (not to say that it won't be challenging), but my main worry is that this will take a whoooooooooooooooooooooooole lot of time.
-* Dual AJAX calls might be a small issue if I'm not careful with which API I'm hitting with each one.
-* The Magic: the Gathering API is a little wonky, and the data I get back (according to POSTMAN) is formatted a little strangely
-* Two models that work with two tables that will eventually join will be a bit of a challenge.
+## Persisting Problems
+* API Limitation is that I couldn't account for double-sided cards because each face was treated as its own separate entry with no way to join them
+* Issue with persistent login - having to log in again and again
+* Responsive design didn't happen
 
 ## Techs used
 * Front End: HTML, CSS, JavaScript
@@ -21,6 +23,7 @@ My second solo project. This proposal doesn't currently take into account reach 
 * Back End: Express, Node, PG-Promise, Body-Parser
 * Database: pSQL
 * Morgan.js as a logging tool to keep track of AJAX calls
+* Passport.js and standard Bcrypt for authentication
 
 ## Wireframes
 
