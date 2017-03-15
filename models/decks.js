@@ -1,7 +1,7 @@
 const db = require('../database');
 const decks = {};
 decks.findAll = (user_id) => {
-    return db.any(`SELECT deck_name, description FROM decks JOIN users ON users.id = decks.user_id WHERE user_id=$1` [user_id])
+    return db.any(`SELECT deck_name, description FROM decks JOIN users ON users.id = decks.user_id WHERE user_id=$1`, [user_id])
 };
 decks.showDeck = (id) => {
     return db.any(`SELECT *, cards.id AS card_id, decks.deck_name AS deck_name FROM cards 

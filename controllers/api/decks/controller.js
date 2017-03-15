@@ -18,6 +18,7 @@ controller.show = (req, res) => {
 };
 controller.create = (req, res) => {
     decks.create(req.body.name, req.body.description, req.user.id).then((data) => {
+        console.log(data);
         res.json(data);
     }).catch((error) => {
         console.log('API Create Controller Error: ', error);
