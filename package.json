@@ -1,30 +1,33 @@
 {
-  "name": "project-two",
-  "version": "1.0.0",
-  "description": "My second solo project. This proposal doesn't currently take into account reach goals. These are only MVP features",
-  "main": "app.js",
-  "scripts": {
-    "start": "nodemon -e js,html,css",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@git.generalassemb.ly:jase-d-ace/turtle-project-2.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "bcrypt": "^1.0.2",
-    "body-parser": "^1.17.1",
-    "connect-flash": "^0.1.1",
-    "cookie-parser": "^1.4.3",
-    "express": "^4.15.2",
-    "express-session": "^1.15.1",
-    "morgan": "^1.8.1",
-    "mustache-express": "^1.2.4",
-    "passport": "^0.3.2",
-    "passport-local": "^1.0.0",
-    "pg-promise": "^5.6.3",
-    "random-int": "^1.0.0"
-  }
+    "name": "project-two"
+    , "version": "1.0.0"
+    , "description": "My second solo project. This proposal doesn't currently take into account reach goals. These are only MVP features"
+    , "main": "app.js"
+    , "engines": {
+        "node": "7.5.0"
+    }
+    , "scripts": {
+        "start": "node app.js"
+        , "test": "echo \"Error: no test specified\" && exit 1"
+    }
+    , "repository": {
+        "type": "git"
+        , "url": "git@git.generalassemb.ly:jase-d-ace/turtle-project-2.git"
+    }
+    , "author": ""
+    , "license": "ISC"
+    , "dependencies": {
+        "bcrypt": "^1.0.2"
+        , "body-parser": "^1.17.1"
+        , "connect-flash": "^0.1.1"
+        , "cookie-parser": "^1.4.3"
+        , "express": "^4.15.2"
+        , "express-session": "^1.15.1"
+        , "morgan": "^1.8.1"
+        , "mustache-express": "^1.2.4"
+        , "passport": "^0.3.2"
+        , "passport-local": "^1.0.0"
+        , "pg-promise": "^5.6.3"
+        , "random-int": "^1.0.0"
+    }
 }

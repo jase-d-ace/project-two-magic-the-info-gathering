@@ -7,7 +7,7 @@ const express = require('express')
     , flash = require('connect-flash')
     , cookieParser = require('cookie-parser')
     , bodyParser = require('body-parser')
-    , PORT = process.env.PORT || 8080;
+    , PORT = process.env.PORT || 3000;
 const app = express();
 app.engine('html', mustacheExpress());
 app.set('view engine', 'html');
