@@ -3,8 +3,6 @@ $(document).ready(function () {
     //weirdly enough, Wizards of the Coast is rather stingy with their information
     //this API, while not perfect, got the job done!
     const form = $('.find-cards');
-    //grab values from search bars to generate a URL
-    //still looking for a way to refactor this nightmare
     const makeUrl = function () {
         let url = 'https://api.deckbrew.com/mtg/cards?';
         let name = {name: $('.name-input').val()}
