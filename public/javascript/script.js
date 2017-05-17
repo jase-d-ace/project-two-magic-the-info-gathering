@@ -7,27 +7,21 @@ $(document).ready(function () {
     //still looking for a way to refactor this nightmare
     const makeUrl = function () {
         let url = 'https://api.deckbrew.com/mtg/cards?';
-        let name = $('.name-input').val();
-        let color = $('.color-input').val();
-        let type = $('.type-input').val();
-        let text = $('.text-input').val();
-        if (name != '') {
-            url += '&name=' + name;
-        }
-        if (color != '') {
-            url += '&color=' + color;
-        }
-        if (type != '') {
-            url += '&type=' + type;
-        }
-        if (text != '') {
-            url += '&oracle=' + text;
-        }
-        if (name === '' && color === '' && type === '' && text === '') {
-            alert('please enter search parameters')
-        }
-        return url;
+        let name = {name: $('.name-input').val()}
+        let color = {color: $('.color-input').val()}
+        let type = {type: $('.type-input').val()}
+        let text = {text: $('.text-input').val()}
+        let params = [name, color, type, text];
+        let searchParameters = params.map(param => {
+          if(Object.values(param).join('')){
+            return `&${Object.keys(param).join('')}=${Object.values(param).join('')}`
+          } else {
+            return
+          }
+        })
+        return url+searchParameters.join('')
     };
+    makeUrl();
     form.on('submit', function (e) {
         e.preventDefault();
         $.ajax({
@@ -36,6 +30,7 @@ $(document).ready(function () {
             , success: function (data) {
                 $('#card-show').empty();
                 loop(data);
+                console.log(this.url)
                 if (data.length === 0) {
                     let alert = $('<div>');
                     alert.text('Your parameters do not match any cards');
