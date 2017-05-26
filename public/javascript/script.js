@@ -3,6 +3,8 @@ $(document).ready(function () {
     //weirdly enough, Wizards of the Coast is rather stingy with their information
     //this API, while not perfect, got the job done!
     const form = $('.find-cards');
+    //grab values from search bars to generate a URL
+    //still looking for a way to refactor this nightmare
     const makeUrl = function () {
         let url = 'https://api.deckbrew.com/mtg/cards?';
         let name = {name: $('.name-input').val()}
@@ -17,9 +19,9 @@ $(document).ready(function () {
             return
           }
         })
+        console.log(url+searchParameters.join(''))
         return url+searchParameters.join('')
     };
-    makeUrl();
     form.on('submit', function (e) {
         e.preventDefault();
         $.ajax({
@@ -28,7 +30,6 @@ $(document).ready(function () {
             , success: function (data) {
                 $('#card-show').empty();
                 loop(data);
-                console.log(this.url)
                 if (data.length === 0) {
                     let alert = $('<div>');
                     alert.text('Your parameters do not match any cards');
@@ -98,14 +99,14 @@ $(document).ready(function () {
             type: 'POST'
             , url: '/api/cards'
             , data: {
-                name: name
-                , type: type
-                , cmc: cost
-                , image: image
-                , text: text
-                , power: power
-                , toughness: toughness
-                , deck_id: deck_id
+                name,
+                type,
+                cost,
+                image,
+                text,
+                power,
+                toughness,
+                deck_id
             }
             , success: function (data) {
                 window.location.replace('/cards/' + data.id)
